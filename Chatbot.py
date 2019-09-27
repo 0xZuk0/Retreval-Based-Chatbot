@@ -22,20 +22,20 @@ vectorizer = TfidfVectorizer()
 vectorizer.fit(np.concatenate((df.Question, df.Answer)))
 
  # Creating Vector Of Questions #
- 
- Question_vectors = vectorizer.transform(df.Question)
- 
- # Main Body #
- 
- print('You Can Start Chatting with me Now.')
- 
- while True :
-      input_question = input()
-      input_question_vector = vectorizer.transform([input_question])
-      similarities = cosine_similarity(input_question_vector, Question_vectors)
-      closest = np.argmax(similarities, axis = 1)
-      
-      print('BOT : ' + df.Answer.iloc[closest].value[0])
-      
 
-------------------------------------------------------END OF THE PROGRAM--------------------------------------------------------
+Question_vectors = vectorizer.transform(df.Question)
+
+ # Main Body #
+
+print('You Can Start Chatting with me Now.')
+
+while True :
+    input_question = input()
+    input_question_vector = vectorizer.transform([input_question])
+    similarities = cosine_similarity(input_question_vector, Question_vectors)
+    closest = np.argmax(similarities, axis = 1)
+
+    print('BOT : ' + df.Answer.iloc[closest].value[0])
+
+
+"""--------------------------------------------------END OF THE PROGRAM----------------------------------------------------"""

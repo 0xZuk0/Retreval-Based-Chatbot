@@ -7,7 +7,7 @@
 
 import numpy as np                                                 # importing modules
 import pandas as pd                                                # numpy for arrays and other functions
-from sklearn.feature_extrction.text import TfidfVectorizer          # sklearn for vectorizer and codine similarity btw words
+from sklearn.feature_extraction.text import TfidfVectorizer          # sklearn for vectorizer and codine similarity btw words
 from sklearn.metrics.pairwise import cosine_similarity             # pandas for reading csv file
 
 
